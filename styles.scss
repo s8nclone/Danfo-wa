@@ -1,0 +1,435 @@
+$base-color: #e09800cf 52% 52%;
+$base-gradient-tb: linear-gradient(to bottom, #ff0 -17% -17%, -10%, #e09800cf 52% 52%);
+$base-gradient-tr: linear-gradient(to right, #ff0 -17% -17%, -10%, #e09800cf 52% 52%);
+$clr-black: #000;
+$clr-white: #FFF;
+$clr-yellow: #ffff00;
+$opaque-base: #e09900f3;
+$off-white: #b8b8b8;
+$base-margin: 2rem auto;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.5;
+    height: 100vw;
+}
+
+@mixin btn {
+    background: $base-gradient-tr;
+    color: $clr-white;
+    border: none;
+    border-radius: 50px;
+    width: 10rem;
+    height: 3rem;
+    margin: $base-margin;
+    cursor: pointer;
+}
+
+@mixin header {
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.border-hr {
+    height: 1px;
+    border: 2px solid $base-color;
+    margin: $base-margin;
+}
+
+/*<-----header starts----->*/
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 8vh;
+    background: $base-color;
+    z-index: 100;
+    padding-inline: 15px;
+
+    .nav-side {
+        display: flex;
+        width: 50vw;
+        justify-content: space-between;
+        height: 8vh;
+        align-items: center;
+
+        .icon img{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    #burger {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 50px;
+        width: 50px;
+        transition: 1s;
+        cursor: pointer;
+        z-index: 10;
+        padding: 10px;
+    }
+      
+    #quit {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 40px;
+        width: 40px;
+        padding: 6px;
+        display: none;
+        cursor: pointer;
+        z-index: 100;
+        color: $clr-yellow;
+    }
+      
+    #links {
+        display: none;
+        flex-direction: column;
+        width: 20vh;
+        height: 40vh;
+        padding: 10px;
+        justify-content: space-around;
+        z-index: 10;
+        background:  $opaque-base;
+        border-radius: 0 0 50px 5px;
+        position: absolute;
+        margin-top: 4.7rem;
+        margin-inline-start: -2rem;
+    }
+      
+    #links a {
+        text-align: center;
+        color: $clr-black;
+        font-size: 2em;
+        font-family: 'Roboto';
+        text-decoration: none;
+    }
+}
+
+/*<-----header ends----->*/
+
+/*<-----hero starts----->*/
+
+.hero-section {
+    background: $base-gradient-tb;
+    color: $clr-white;
+    text-align: center;
+
+    h1 {
+        font-size: 3rem;
+        padding: 1rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    h3,
+    p{
+        color: $clr-black;
+        padding: 0 1rem;
+    }
+
+    .book-btn {
+        @include btn;
+    }
+
+
+
+    .home-img img {
+        width: 100vw;
+        height: 30rem;
+    }
+}
+/*<-----hero ends----->*/
+
+/*<-----bookings starts----->*/
+
+.bookings-container {
+    text-align: center;
+
+    .bookings-header {
+        @include header;
+        margin: 1rem auto;
+    }
+
+    .form-grid {
+        margin: $base-margin;
+        gap: 1rem;
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: .5rem;
+            margin: .5rem auto;
+
+            label {
+                font-size: 1.5rem;
+                font-weight: 600;
+                padding: .2rem;
+            }
+        
+            input {
+                width: 20rem;
+                border-radius: 5rem;
+                border: none;
+                background-color: $off-white;
+                padding: 1rem;
+                border-bottom: .5rem;
+                height: 3rem;
+            }
+        }
+
+    }
+
+    .form-btn {
+        @include btn;
+        margin: 0 auto;
+    }
+}
+
+/*<-----bookings ends----->*/
+
+/*<-----packages starts----->*/
+
+.packages-container {
+    text-align: center;
+    margin: $base-margin;
+
+    .packages-header {
+        @include header;
+    }
+
+    .box {
+
+        .box-img {
+            position: relative;
+            margin: 1rem;
+        }
+
+        h2 {
+            position: absolute;
+            top: 5%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            font-size: 2.5rem;
+        }
+
+        .price {
+            background: #b8b8b881;
+            position: absolute;
+            padding: .5rem;
+            top: 25%;
+            left: 15%;
+            right: 15%;
+            bottom: 30%;
+            border-radius: 2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .pkg-btn {
+            position: absolute;
+            bottom: 0;
+            left: 35%;
+            @include btn;
+        }
+    }
+}
+
+/*<-----packages ends----->*/
+
+/*<-----about starts----->*/
+
+.about-container {
+    margin: $base-margin;
+    text-align: center;
+
+    .about-header {
+        font-size: 2.5rem;
+    }
+
+    .about-img {
+        position: relative;
+        margin: $base-margin;
+
+        img {
+            width: 100vw;
+            height: 40rem;
+        }
+
+        p {
+            position: absolute;
+            top: 15%;
+            bottom: 15%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: #00000067;
+            color: $clr-white;
+            font-size: 2rem;
+        }
+    }
+
+}
+
+/*<-----about ends----->*/
+
+/*<-----customer-review starts----->*/
+
+.customer-container {
+    margin: $base-margin;
+    text-align: center;
+
+    .customer-header {
+        @include header;
+    }
+
+    .customer-review-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: $base-margin;
+
+        .customer-box {
+            padding: 1rem;
+
+            .info-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+
+                img {
+                    width: 10rem;
+                    border-radius: 0 2rem;
+                }
+
+                .customer-info {
+                    text-align: left;
+                    font-size: 2rem;
+                }
+            }
+
+            .customer-review  {
+                font-size: 2rem;
+                padding: 2rem;
+            }
+        }
+    }
+
+    .arrow-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        background: $base-gradient-tr;
+        color: $clr-white;
+
+        &:nth-child(1) {
+            background: $clr-black;
+        }
+    }
+}
+/*<-----customer-review ends----->*/
+
+/*<-----footer starts----->*/
+
+.footer-container {
+    background: $base-gradient-tb;
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: $base-margin;
+        padding: 1rem;
+        gap: 2rem;
+        
+
+        .footer-icon {
+            text-align: center;
+            color: $clr-white;
+            img {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+
+        .footer-box {
+            font-size: 1.5rem;
+
+            h3 {
+                color: $clr-white;
+            }
+        }
+
+        .social-link {
+            .social-icons {
+                display: flex;
+                gap: 2rem;
+                a {
+                    @include link;
+                    font-size: 2.5rem;
+                    color: inherit;
+                    
+                }
+            }
+        }
+
+        .footer-link {
+            ul {
+                list-style-type: none;
+                li {
+                    a {
+                        @include link;
+                    }
+                    
+                }
+                
+            }
+            
+        }
+    }
+
+    .legal {
+        text-align: center;
+        font-size: 1.5rem;
+
+        a {
+            @include link;
+            font-size: 2rem;
+        }
+    }
+}
+/*<-----footer ends----->*/

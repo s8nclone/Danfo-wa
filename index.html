@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="image/danfo-favicon.jpg">
 
@@ -14,10 +14,10 @@
 
 <body>
   <header>
-    <div class="flex1">
+    <div class="flex1 header-container">
       <nav>
-        <img id="burger" src="image/hamburger-menu.svg" alt="hamburger-menu" onclick="burger()" />
-        <img id="quit" src="image/close-btn.svg" alt="close button" onclick="quit()" />
+        <img id="burger" src="image/hamburger-menu.svg" alt="hamburger-menu" onclick="showLinks()" />
+        <img id="quit" src="image/close-btn.svg" alt="close button" onclick="hideLinks()" />
         <div id="links">
           <a href="">Home</a>
           <a href="">About</a>
@@ -31,20 +31,20 @@
           <img src="image/danfo-logo.png"/>
         </div>
         <div class="brand">
-          <h2>LOGO</h2>
+          <h2>Danfo Wa</h2>
         </div>
       </div>
       
     </div>
   </header>
 
-  <section class="home center background">
+  <section class="home center background hero-section">
     <div class="container">
       <div class="text">
-        <h1>Danfo Wa Oo!</h1>
+        <h1>O Wa Oo!</h1>
         <h3> Book your travels with our agency</h3>
         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <button>book now</button>
+        <button class="book-btn">Book Now</button>
       </div>
     </div>
     <div class="home-img">
@@ -53,157 +53,168 @@
   </section>
 
 
-  <section class="book center">
-    <div class="container">
-      <div class="heading">
+  <section class="bookings-section center">
+    <div class="bookings-container">
+      <div class="bookings-header">
         <h2>Book your tickets</h2>
         <p> ... book a ticket to your favorite destinations and let us handle the rest!</p>
       </div>
 
       <form>
-        <div class="items grid">
+        <div class="form-grid">
           <div class="input">
-            <label>Where</label>
+            <label>Where:</label>
             <input type="text" placeholder="xxxxxxx">
           </div>
           <div class="input">
-            <label>to</label>
+            <label>To:</label>
             <input type="text" placeholder="xxxxxxx">
           </div>
           <div class="input">
-            <label>email</label>
+            <label>Email:</label>
             <input type="text" placeholder="xxxxxxx">
           </div>
           <div class="input">
-            <label>date</label>
+            <label>Date:</label>
             <input type="text" placeholder="xxxxxxx">
           </div>
           <div class="input">
-            <label>price</label>
+            <label>Price:</label>
             <input type="text" placeholder="xxxxxxx">
           </div>
           <div class="input">
-            <label>phone number</label>
+            <label>Phone:</label>
             <input type="text" placeholder="xxxxxxx">
           </div>
         </div>
-        <button class="btn1">book now</button>
+        <button class="form-btn">Book Ride</button>
       </form>
     </div>
   </section>
 
+  <hr class="border-hr">
 
-  <section class="packages">
-    <div class="container">
-      <div class="heading">
+  <section class="packages-section">
+    <div class="packages-container">
+      <div class="packages-header">
         <h2>Our packages</h2>
         <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
 
       <div class="items grid center mtop">
         <div class="box">
-          <div class="img">
+          <div class="box-img">
             <img src="image/danfo-11.jpg" alt="">
+          
+            <h2>Victoria Island</h2>
+            <div class="price">
+              <h3>S/2000</h3>
+              <p> Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <button class="pkg-btn">book now</button>
           </div>
-          <h3>Victoria Island</h3>
-          <div class="price">
-            <h4>S/2000</h4>
-            <p> Excepteur sint occaecat cupidatat non proident.</p>
-          </div>
-          <button class="btn">book now</button>
         </div>
         <div class="box">
-          <div class="img">
+          <div class="box-img">
             <img src="image/danfo-11.jpg" alt="">
+          
+            <h2>Badagry</h2>
+            <div class="price">
+              <h3>S/2000</h3>
+              <p> Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <button class="pkg-btn">book now</button>
           </div>
-          <h3>Lekki</h3>
-          <div class="price">
-            <h4>S/2000</h4>
-            <p> Excepteur sint occaecat cupidatat non proident.</p>
-          </div>
-          <button class="btn">book now</button>
         </div>
         <div class="box">
-          <div class="img">
+          <div class="box-img">
             <img src="image/danfo-11.jpg" alt="">
+          
+            <h2>Oshodi</h2>
+            <div class="price">
+              <h3>S/2000</h3>
+              <p> Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <button class="pkg-btn">book now</button>
           </div>
-          <h3>Ikoyi</h3>
-          <div class="price">
-            <h4>S/2000</h4>
-            <p> Excepteur sint occaecat cupidatat non proident.</p>
-          </div>
-          <button class="btn">book now</button>
         </div>
         <div class="box">
-          <div class="img">
+          <div class="box-img">
             <img src="image/danfo-11.jpg" alt="">
+          
+            <h2>Obalende/CMS</h2>
+            <div class="price">
+              <h3>S/2000</h3>
+              <p> Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <button class="pkg-btn">book now</button>
           </div>
-          <h3>Ikotun</h3>
-          <div class="price">
-            <h4>S/2000</h4>
-            <p> Excepteur sint occaecat cupidatat non proident.</p>
-          </div>
-          <button class="btn">book now</button>
         </div>
         <div class="box">
-          <div class="img">
+          <div class="box-img">
             <img src="image/danfo-11.jpg" alt="">
+          
+            <h2>Surulere</h2>
+            <div class="price">
+              <h3>S/2000</h3>
+              <p> Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <button class="pkg-btn">book now</button>
           </div>
-          <h3>Yaba</h3>
-          <div class="price">
-            <h4>S/2000</h4>
-            <p> Excepteur sint occaecat cupidatat non proident.</p>
-          </div>
-          <button class="btn">book now</button>
         </div>
         <div class="box">
-          <div class="img">
+          <div class="box-img">
             <img src="image/danfo-11.jpg" alt="">
+          
+            <h2>Idumota</h2>
+            <div class="price">
+              <h3>S/2000</h3>
+              <p> Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <button class="pkg-btn">book now</button>
           </div>
-          <h3>Surulere</h3>
-          <div class="price">
-            <h4>S/2000</h4>
-            <p> Excepteur sint occaecat cupidatat non proident.</p>
-          </div>
-          <button class="btn">book now</button>
         </div>
       </div>
     </div>
   </section>
 
 
-  <section class=" about top center">
-    <div class="container">
-      <div class="heading">
-        <h2>About Us</h2>
-        <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <section class="about top center about-section">
+    <div class="about-container">
+      <h2 class="about-header">About Us</h2>
+
+      <div class="about-img">
+        <img src="image/danfo-toon-park.jpg" alt="">
+        <p> 
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Commodi deleniti omnis incidunt inventore pariatur voluptatem 
+          soluta nisi? Vel ipsa aut dolorum ut, neque unde, error ad eaque fugiat, voluptatibus ipsum.
+        </p>
       </div>
-    </div>
-    <div class="about-img">
-      <img src="image/danfo-toon-park.jpg" alt="">
     </div>
   </section>
 
 
-  <section class="customer">
-    <div class="container">
-      <div class="heading">
+  <section class="customer-section">
+    <div class="customer-container">
+      <div class="customer-header">
         <h2>What our customers are saying</h2>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Nostrum quos tenetur nulla molestiae quis in expedita blanditiis.
         </p>
       </div>
 
-      <div class="items flex">
+      <div class="items flex customer-review-flex">
         <div class="customer-box">
-          <div class="img flex">
+          <div class="img flex info-container">
             <img src="image/c1.jpg" alt="">
-            <div class="text">
+            <div class="customer-info">
               <h3>Alex Ander</h3>
               <label>Tourist</label>
             </div>
           </div>
-          <div class="para">
+          <div class="customer-review">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -213,14 +224,14 @@
           </div>
         </div>
         <div class="customer-box">
-          <div class="img flex">
+          <div class="img flex info-container">
             <img src="image/c2.jpg" alt="">
-            <div class="text">
+            <div class="customer-info">
               <h3>Alex Ander</h3>
               <label>Tourist</label>
             </div>
           </div>
-          <div class="para">
+          <div class="customer-review">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -231,44 +242,42 @@
         </div>
       </div>
       <div class="dots center">
-        <button class="btn1"> <i class="fa fa-long-arrow-left"></i> </button>
-        <button class="btn1"> <i class="fa fa-long-arrow-right"></i> </button>
+        <button class="arrow-btn"> <i class="fa fa-long-arrow-left"></i> </button>
+        <button class="arrow-btn"> <i class="fa fa-long-arrow-right"></i> </button>
       </div>
     </div>
   </section>
 
 
-  <footer class="top">
-    <div class="container ">
-      <div class="content  grid ">
-        <div class="box">
-          <h3>About Us</h3>
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Commodi deleniti omnis incidunt inventore pariatur voluptatem 
-              soluta nisi? Vel ipsa aut dolorum ut, neque unde, error ad eaque fugiat, voluptatibus ipsum.
-          </p>
+  <footer class="footer-section">
+    <div class="footer-container ">
+      <div class="footer-content">
+        <div class="footer-icon">
+          <img src="image/danfo-logo.png"/>
+          <h1>Danfo Wa Oo!</h1>
         </div>
-        <div class="box center">
+
+        <div class="footer-box social-link">
           <h3>connect with us on social media</h3>
           <div class="social-icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-youtube"></i>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
           </div>
           
         </div>
-        <div class="box center">
+        <div class="footer-box footer-link">
           <h3>Helpful link</h3>
           <ul>
-            <li>home</li>
-            <li>about</li>
-            <li>service</li>
-            <li>blog</li>
-            <li>contact us</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact us</a></li>
           </ul>
         </div>
-        <div class="box">
+        <div class="footer-box">
           <h3>Support</h3>
           <div class="contact">
             <div class="item">
@@ -290,26 +299,7 @@
     </div>
   </footer>
 
-  <script>
-    function burger() {
-      var burger = document.getElementById('burger');
-      var links = document.getElementById('links');
-      var quit = document.getElementById('quit');
-      burger.style.display = 'none';
-      links.style.display = 'flex';
-      quit.style.display = 'block';
-    }
-
-    function quit() {
-      var burger = document.getElementById('burger');
-      var links = document.getElementById('links');
-      var quit = document.getElementById('quit');
-      burger.style.display = "block";
-      burger.style.padding = '10px 10px 10px 10px';
-      links.style.display = 'none';
-      quit.style.display = 'none';
-    }
-  </script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

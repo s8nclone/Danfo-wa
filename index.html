@@ -14,41 +14,42 @@
 
 <body>
   <header>
-    <div class="flex1 header-container">
-      <nav>
+    <nav class="header-container">
+      <div class="nav-links">
         <img id="burger" src="image/hamburger-menu.svg" alt="hamburger-menu" onclick="showLinks()" />
         <img id="quit" src="image/close-btn.svg" alt="close button" onclick="hideLinks()" />
         <div id="links">
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">Service</a>
-          <a href="">Blog</a>
-          <a href="">Contact</a>
+          <!-- <a href="">Home</a> -->
+          <a href="#about">About</a>
+          <a href="#services">Service</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
         </div>
-      </nav>
+      </div>
       <div class="nav-side">
         <div class="icon">
-          <img src="image/danfo-logo.png"/>
+          <a href="#home"><img src="image/danfo-logo.png"/></a>
         </div>
         <div class="brand">
           <h2>Danfo Wa</h2>
         </div>
       </div>
       
-    </div>
+    </nav>
   </header>
 
-  <section class="home center background hero-section">
-    <div class="container">
-      <div class="text">
+  <section id="home" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text">
         <h1>O Wa Oo!</h1>
         <h3> Book your travels with our agency</h3>
         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <button class="book-btn">Book Now</button>
       </div>
-    </div>
-    <div class="home-img">
-      <img src="image/Danfo-hero.png" alt="">
+    
+      <div class="home-img">
+        <img src="image/Danfo-hero.png" alt="">
+      </div>
     </div>
   </section>
 
@@ -94,21 +95,21 @@
 
   <hr class="border-hr">
 
-  <section class="packages-section">
+  <section id="services" class="packages-section">
     <div class="packages-container">
       <div class="packages-header">
         <h2>Our packages</h2>
         <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
 
-      <div class="items grid center mtop">
+      <div class="packages-grid">
         <div class="box">
           <div class="box-img">
             <img src="image/danfo-11.jpg" alt="">
           
             <h2>Victoria Island</h2>
             <div class="price">
-              <h3>S/2000</h3>
+              <h3>#2000</h3>
               <p> Excepteur sint occaecat cupidatat non proident.</p>
             </div>
             <button class="pkg-btn">book now</button>
@@ -120,7 +121,7 @@
           
             <h2>Badagry</h2>
             <div class="price">
-              <h3>S/2000</h3>
+              <h3>#2000</h3>
               <p> Excepteur sint occaecat cupidatat non proident.</p>
             </div>
             <button class="pkg-btn">book now</button>
@@ -132,7 +133,7 @@
           
             <h2>Oshodi</h2>
             <div class="price">
-              <h3>S/2000</h3>
+              <h3>#2000</h3>
               <p> Excepteur sint occaecat cupidatat non proident.</p>
             </div>
             <button class="pkg-btn">book now</button>
@@ -144,7 +145,7 @@
           
             <h2>Obalende/CMS</h2>
             <div class="price">
-              <h3>S/2000</h3>
+              <h3>#2000</h3>
               <p> Excepteur sint occaecat cupidatat non proident.</p>
             </div>
             <button class="pkg-btn">book now</button>
@@ -156,7 +157,7 @@
           
             <h2>Surulere</h2>
             <div class="price">
-              <h3>S/2000</h3>
+              <h3>#2000</h3>
               <p> Excepteur sint occaecat cupidatat non proident.</p>
             </div>
             <button class="pkg-btn">book now</button>
@@ -168,7 +169,7 @@
           
             <h2>Idumota</h2>
             <div class="price">
-              <h3>S/2000</h3>
+              <h3>#2000</h3>
               <p> Excepteur sint occaecat cupidatat non proident.</p>
             </div>
             <button class="pkg-btn">book now</button>
@@ -178,19 +179,23 @@
     </div>
   </section>
 
+  <!-- <hr class="border-hr"> -->
 
-  <section class="about top center about-section">
+  <section id="about" class="about-section">
     <div class="about-container">
       <h2 class="about-header">About Us</h2>
 
       <div class="about-img">
         <img src="image/danfo-toon-park.jpg" alt="">
-        <p> 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Commodi deleniti omnis incidunt inventore pariatur voluptatem 
-          soluta nisi? Vel ipsa aut dolorum ut, neque unde, error ad eaque fugiat, voluptatibus ipsum.
-        </p>
+        <div>
+          <p class="div-p"> 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Commodi deleniti omnis incidunt inventore pariatur voluptatem 
+            soluta nisi? Vel ipsa aut dolorum ut, neque unde, error ad eaque fugiat, voluptatibus ipsum.
+          </p>
+        </div>
+        
       </div>
     </div>
   </section>
@@ -205,12 +210,12 @@
         </p>
       </div>
 
-      <div class="items flex customer-review-flex">
+      <div class="customer-review-flex">
         <div class="customer-box">
-          <div class="img flex info-container">
+          <div class="info-container">
             <img src="image/c1.jpg" alt="">
             <div class="customer-info">
-              <h3>Alex Ander</h3>
+              <h3>Alex Bagwell</h3>
               <label>Tourist</label>
             </div>
           </div>
@@ -224,11 +229,11 @@
           </div>
         </div>
         <div class="customer-box">
-          <div class="img flex info-container">
+          <div class="info-container">
             <img src="image/c2.jpg" alt="">
             <div class="customer-info">
-              <h3>Alex Ander</h3>
-              <label>Tourist</label>
+              <h3>Tunji Akanni</h3>
+              <label>Blogger</label>
             </div>
           </div>
           <div class="customer-review">
@@ -241,7 +246,7 @@
           </div>
         </div>
       </div>
-      <div class="dots center">
+      <div>
         <button class="arrow-btn"> <i class="fa fa-long-arrow-left"></i> </button>
         <button class="arrow-btn"> <i class="fa fa-long-arrow-right"></i> </button>
       </div>
@@ -249,7 +254,7 @@
   </section>
 
 
-  <footer class="footer-section">
+  <footer id="contact" class="footer-section">
     <div class="footer-container ">
       <div class="footer-content">
         <div class="footer-icon">
@@ -270,11 +275,11 @@
         <div class="footer-box footer-link">
           <h3>Helpful link</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact us</a></li>
           </ul>
         </div>
         <div class="footer-box">

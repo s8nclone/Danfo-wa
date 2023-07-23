@@ -1,5 +1,6 @@
 $base-color: #e09800cf 52% 52%;
 $base-gradient-tb: linear-gradient(to bottom, #ff0 -17% -17%, -10%, #e09800cf 52% 52%);
+$base-gradient-tt: linear-gradient(to top, #ff0 -17% -17%, -10%, #e09800cf 52% 52%);
 $base-gradient-tr: linear-gradient(to right, #ff0 -17% -17%, -10%, #e09800cf 52% 52%);
 $clr-black: #000;
 $clr-white: #FFF;
@@ -30,6 +31,11 @@ html {
     height: 3rem;
     margin: $base-margin;
     cursor: pointer;
+
+    &:hover {
+        transition: .2s;
+        transform: scale(1.1);
+    }
 }
 
 @mixin header {
@@ -39,6 +45,16 @@ html {
 
     p {
         font-size: 1.5rem;
+    }
+}
+
+@mixin largerHeader {
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 2rem;
     }
 }
 
@@ -52,14 +68,24 @@ html {
     height: 1px;
     border: 2px solid $base-color;
     margin: $base-margin;
+    
+    @media only screen and (min-width: 900px) {
+        width: 80%;
+    }
 }
 
 /*<-----header starts----->*/
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
 
 .header-container {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
     height: 8vh;
     background: $base-color;
     z-index: 100;
@@ -88,6 +114,7 @@ html {
         cursor: pointer;
         z-index: 10;
         padding: 10px;
+
     }
       
     #quit {
@@ -101,20 +128,22 @@ html {
         cursor: pointer;
         z-index: 100;
         color: $clr-yellow;
+
     }
       
     #links {
         display: none;
         flex-direction: column;
-        width: 20vh;
+        width: 100%;
         height: 40vh;
         padding: 10px;
         justify-content: space-around;
+        align-items: flex-start;
         z-index: 10;
         background:  $opaque-base;
         border-radius: 0 0 50px 5px;
         position: absolute;
-        margin-top: 4.7rem;
+        margin-top: 5rem;
         margin-inline-start: -2rem;
     }
       
@@ -124,7 +153,49 @@ html {
         font-size: 2em;
         font-family: 'Roboto';
         text-decoration: none;
+
+        &:hover {
+            text-decoration: 2px solid underline $clr-black;
+            transform: scale(1.1);
+        }
     }
+
+    @media only screen and (min-width: 700px) {
+
+        .header-container {
+            max-width: 80%;
+        }
+
+        #burger,
+        #quit {
+            display: none !important;
+        }
+
+        #links {
+            display: flex !important;
+            position: revert !important;
+            background: none;
+            margin: 0 auto;
+            flex-direction: row;
+            width: 35vw;
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+            font-size: 1rem;
+            font-weight: 600;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-size: 2rem;
+        }
+    }
+
+    // @media only screen and (min-width: 1020px) {
+    //     #links {
+    //         gap: revert;
+    //     }
+    // }
 }
 
 /*<-----header ends----->*/
@@ -159,11 +230,25 @@ html {
         @include btn;
     }
 
-
-
     .home-img img {
-        width: 100vw;
+        width: 100%;
         height: 30rem;
+    }
+
+    @media only screen and (min-width: 700px) {
+        .hero-text {
+            max-width: 50vw;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 5rem;
+        }
+
+        .home-img img {
+            height: 80vh;
+            border-radius: 1rem;
+        }
     }
 }
 /*<-----hero ends----->*/
@@ -204,6 +289,12 @@ html {
                 padding: 1rem;
                 border-bottom: .5rem;
                 height: 3rem;
+                transition: 0.3s;
+                outline: none;
+
+                &:focus {
+                    border: 1px solid $opaque-base;
+                }
             }
         }
 
@@ -213,6 +304,21 @@ html {
         @include btn;
         margin: 0 auto;
     }
+
+    @media only screen and (min-width: 700px) {
+        margin: $base-margin;
+
+        .bookings-header {
+            @include largerHeader();
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 20rem);
+            justify-content: center;
+            gap: 2rem;
+        }
+    }
 }
 
 /*<-----bookings ends----->*/
@@ -221,7 +327,8 @@ html {
 
 .packages-container {
     text-align: center;
-    margin: $base-margin;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
 
     .packages-header {
         @include header;
@@ -247,10 +354,9 @@ html {
         .price {
             background: #b8b8b881;
             position: absolute;
-            padding: .5rem;
             top: 25%;
-            left: 15%;
-            right: 15%;
+            left: 25%;
+            right: 25%;
             bottom: 30%;
             border-radius: 2rem;
             font-size: 1.5rem;
@@ -264,6 +370,44 @@ html {
             @include btn;
         }
     }
+
+    @media only screen and (min-width: 700px) {
+        .packages-header {
+            @include largerHeader();
+        }
+
+        .packages-grid{
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(2, 30rem);
+            justify-content: center;
+            gap: 2rem;
+
+            .box {
+                height: 25rem;
+
+                .box-img {
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .price {
+                    padding: .5rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1020px) {
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 30rem);
+        }
+    }
 }
 
 /*<-----packages ends----->*/
@@ -273,6 +417,7 @@ html {
 .about-container {
     margin: $base-margin;
     text-align: center;
+    background: $base-gradient-tt;
 
     .about-header {
         font-size: 2.5rem;
@@ -283,11 +428,11 @@ html {
         margin: $base-margin;
 
         img {
-            width: 100vw;
+            width: 100%;
             height: 40rem;
         }
 
-        p {
+        .div-p {
             position: absolute;
             top: 15%;
             bottom: 15%;
@@ -300,6 +445,23 @@ html {
         }
     }
 
+    @media only screen and (min-width: 700px) {
+        .about-header{
+            font-size: 3.5rem;
+        }
+        .about-img {
+        
+            img {
+                border-radius: .5rem;
+                height: 50rem;
+            }
+
+            .div-p {
+                padding: 8rem;
+                font-size: 2.5rem;
+            }
+        }
+    }
 }
 
 /*<-----about ends----->*/
@@ -355,9 +517,37 @@ html {
         border: none;
         background: $base-gradient-tr;
         color: $clr-white;
+        
+        &:hover {
+            transform: scale(1.1);
+            transition: .2s;
+        }
 
         &:nth-child(1) {
             background: $clr-black;
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+        .customer-header {
+            @include largerHeader();
+        }
+
+        .customer-review-flex {
+            flex-direction: row;
+
+            .customer-box {
+                .customer-review {
+                    text-align: left;
+                    
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+        .customer-review-flex {
+            max-width: 70%;
         }
     }
 }
@@ -429,6 +619,23 @@ html {
         a {
             @include link;
             font-size: 2rem;
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+
+        .footer-content {
+            max-width: 70%;
+            padding: 2rem 3rem
+        }
+    }
+
+    @media only screen and (min-width: 1020px) {
+        .footer-content {
+            max-width: 90%;
+            padding: 2rem 3rem
         }
     }
 }
